@@ -1,0 +1,14 @@
+
+digraph G {
+ graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.35", ranksep="0.55", fontname="Arial", label="Global Fuel Analytics — Current Implemented Architecture", labelloc=t, fontsize=18];
+ node [shape=box, style="rounded,filled", color="#5A8DB8", fillcolor="#EAF5FC", fontname="Arial", fontsize=10, margin="0.18,0.12"];
+ edge [color="#64748B", fontname="Arial", fontsize=9, arrowsize=0.7];
+ src [label="Source CSV\nglobal_fuel_prices_Dataset.csv\n10 attributes / reported 27,468 rows"];
+ prep [label="Data Quality & Preparation\nStandardization • missing values\nduplicates • outlier & region checks"];
+ tab [label="Tableau Desktop\nData model • 9 calculated fields\nWorksheets • dashboard • Story"];
+ pub [label="Tableau Public\nPublished dashboard\nPublished 7-scene Story"];
+ web [label="Flask / HTML Website\nProject overview • About the Data\nEmbedded dashboard and Story"];
+ user [shape=ellipse, style=filled, fillcolor="#F1F5F9", color="#94A3B8", label="Viewer / Reviewer"];
+ src -> prep -> tab -> pub -> web -> user;
+ pub -> user [label="direct public links", style=dashed];
+}
